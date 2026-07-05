@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Sri Balaji Dental & Implant Centre – Advanced dental care in Warangal. Implants, Root Canal, Braces, Cosmetic Dentistry."/>
+<title>Sri Balaji Dental & Implant Centre | Warangal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<style>
+/* ============================================================
+   Sri Balaji Dental & Implant Centre — style.css  (v5)
+   Vibrant color palette:
+     --primary   : #0057A8  (rich royal blue)
+     --secondary : #00B4D8  (bright cyan)
+     --accent    : #FF6B35  (energetic orange)
+     --gold      : #FFB703  (warm gold)
+     --green     : #06D6A0  (fresh mint)
+     --light-bg  : #EEF6FF
+     --dark      : #0D1B2A
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary:    #0057A8;
+  --primary-dk: #003D7A;
+  --secondary:  #00B4D8;
+  --accent:     #FF6B35;
+  --gold:       #FFB703;
+  --green:      #06D6A0;
+  --light-bg:   #EEF6FF;
+  --dark:       #0D1B2A;
+  --text:       #1a1a2e;
+  --text-muted: #64748B;
+  --white:      #FFFFFF;
+  --border:     #D6E8F8;
+  --radius:     14px;
+  --shadow:     0 4px 24px rgba(0,87,168,0.12);
+  --shadow-lg:  0 12px 40px rgba(0,87,168,0.20);
+  --grad:       linear-gradient(135deg, #0057A8, #00B4D8);
+  --grad-warm:  linear-gradient(135deg, #FF6B35, #FFB703);
+  --transition: 0.3s ease;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+img  { max-width: 100%; height: auto; display: block; }
+a    { color: inherit; text-decoration: none; }
+ul   { list-style: none; }
+h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+h2  { font-size: clamp(1.7rem, 3.5vw, 2.5rem); color: var(--dark); }
+h3  { font-size: 1.2rem; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ─── BUTTONS ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 26px; border-radius: 50px;
+  font-size: 0.95rem; font-weight: 600; cursor: pointer;
+  transition: var(--transition); border: none; white-space: nowrap;
+}
+.btn-primary  { background: var(--grad); color: var(--white); box-shadow: 0 4px 16px rgba(0,87,168,.28); }
+.btn-primary:hover  { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,87,168,.40); }
+.btn-hero-book {
+  background: linear-gradient(135deg, #FF6B35, #FFB703);
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(255,107,53,.55);
+  font-weight: 700; font-size: 1rem;
+  animation: bookPulse 2.5s infinite;
+}
+.btn-hero-book:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(255,107,53,.70); animation: none; }
+@keyframes bookPulse {
+  0%,100% { box-shadow: 0 4px 20px rgba(255,107,53,.55); }
+  50%      { box-shadow: 0 4px 28px rgba(255,107,53,.85), 0 0 0 8px rgba(255,107,53,.15); }
+}
+.btn-whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); color: var(--white); box-shadow: 0 4px 16px rgba(37,211,102,.28); }
+.btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,.40); }
+.btn-outline   { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+.btn-outline:hover  { background: var(--primary); color: var(--white); }
+.btn-sm   { padding: 9px 18px; font-size: 0.85rem; }
+.btn-full { width: 100%; justify-content: center; font-size: 1.05rem; padding: 16px; }
+
+/* ─── SECTION HEADER ──────────────────────────────────────── */
+.section-header { text-align: center; margin-bottom: 56px; }
+.section-header p { color: var(--text-muted); max-width: 560px; margin: 12px auto 0; font-size: 1rem; }
+.section-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(0,87,168,.10), rgba(0,180,216,.10));
+  color: var(--primary);
+  padding: 5px 16px; border-radius: 50px;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 1.2px;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+
+/* ─── ANIMATIONS ──────────────────────────────────────────── */
+[data-animate] { opacity: 1; transform: none; }
+[data-animate].anim { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+[data-animate].anim.visible { opacity: 1; transform: none; }
+
+/* ─── TOPBAR ──────────────────────────────────────────────── */
+.topbar {
+  background: linear-gradient(90deg, var(--primary-dk) 0%, var(--primary) 55%, var(--secondary) 100%);
+  color: #fff; font-size: 12.5px; padding: 7px 0; position: relative; z-index: 1001;
+}
+.topbar-inner {
+  max-width: 1250px; margin: 0 auto; padding: 0 20px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;
+}
+.tb-left, .tb-right { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.topbar a, .topbar span { color: #fff; display: flex; align-items: center; gap: 6px; transition: .2s; }
+.topbar a:hover { color: var(--gold); }
+.topbar i { color: var(--gold); font-size: 11px; }
+@media (max-width: 640px) { .tb-left { display: none; } }
+
+/* ─── NAVBAR ──────────────────────────────────────────────── */
+.navbar {
+  position: sticky; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(14px);
+  border-bottom: 3px solid var(--secondary);
+  transition: box-shadow var(--transition);
+}
+.navbar.scrolled { box-shadow: var(--shadow); }
+
+.nav-container {
+  max-width: 1250px; margin: 0 auto; padding: 0 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: 78px;
+}
+
+/* ── LOGO BIGGER ──────────────────────────────────────────── */
+.nav-logo { display: flex; align-items: center; gap: 13px; }
+
+.logo-icon-wrap {
+  width: 70px; height: 70px; border-radius: 50%;
+  overflow: hidden; flex-shrink: 0;
+  border: 3px solid var(--gold);
+  box-shadow: 0 4px 16px rgba(0,87,168,.28);
+}
+.logo-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+.logo-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 800;
+  background: var(--grad);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.logo-sub  { font-size: 13px; color: var(--accent); font-weight: 700; margin-top: 1px; }
+.logo-loc  { font-size: 11px; color: var(--text-muted); display: flex; align-items: center; gap: 4px; margin-top: 2px; }
+.logo-loc i { color: var(--secondary); font-size: 10px; -webkit-text-fill-color: var(--secondary); }
+
+.nav-links { display: flex; align-items: center; gap: 2px; }
+.nav-link { padding: 8px 12px; border-radius: 8px; font-size: 0.88rem; font-weight: 500; color: var(--text); transition: var(--transition); }
+.nav-link:hover, .nav-link.active { color: var(--primary); background: rgba(0,87,168,.07); }
+.btn-nav {
+  background: var(--grad-warm); color: var(--white) !important;
+  padding: 9px 18px; border-radius: 50px; font-weight: 600;
+  box-shadow: 0 4px 14px rgba(255,107,53,.35);
+  display: inline-flex; align-items: center; gap: 7px;
+}
+.btn-nav:hover { transform: translateY(-2px); opacity: .92; }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: var(--transition); }
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+/* ─── HERO ────────────────────────────────────────────────── */
+.hero {
+  min-height: 92vh;
+  background: linear-gradient(135deg, #002D5E 0%, #0057A8 45%, #00B4D8 100%);
+  display: flex; align-items: center;
+  padding-top: 0; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+}
+.hero-container {
+  max-width: 1250px; margin: 0 auto; padding: 60px 20px 100px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 50px; align-items: center; position: relative; z-index: 1;
+}
+
+/* Left */
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(255,255,255,.15); backdrop-filter: blur(8px);
+  color: #fff; padding: 7px 16px; border-radius: 50px;
+  font-size: 0.82rem; font-weight: 600; margin-bottom: 22px;
+  border: 1px solid rgba(255,255,255,.25);
+}
+.hero-badge i { color: var(--gold); }
+.hero-heading { font-size: clamp(2.4rem, 5vw, 3.8rem); color: var(--white); margin-bottom: 18px; line-height: 1.1; }
+.accent { color: #00E5FF; }
+.hero-subheading { color: rgba(255,255,255,.88); font-size: 1.05rem; line-height: 1.7; margin-bottom: 10px; }
+.hero-telugu { color: rgba(255,255,255,.65); font-size: 0.92rem; margin-bottom: 30px; font-style: italic; }
+.hero-buttons { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 32px; }
+.trust-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.trust-item { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,.90); font-size: 0.85rem; font-weight: 500; }
+.trust-item i { color: #00E5FF; font-size: 1rem; }
+
+/* Right – boy + slider */
+.hero-right {
+  position: relative;
+  display: flex; align-items: flex-end; justify-content: center;
+}
+
+/* Boy image floating beside/behind slider */
+.hero-boy-wrap {
+  position: absolute;
+  bottom: 0; left: -60px;
+  z-index: 2;
+  pointer-events: none;
+}
+.hero-boy {
+  width: 200px;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,.30));
+  animation: boyFloat 4s ease-in-out infinite;
+}
+@keyframes boyFloat { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
+
+/* ── SLIDER (fixed with translateX) ──────────────────────── */
+.hero-slider {
+  position: relative;
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,.35);
+  width: 100%; max-width: 420px;
+  background: #fff;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.65s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: transform;
+}
+.slide-item {
+  min-width: 100%; position: relative;
+}
+.slide-item img {
+  width: 100%; height: 280px;
+  object-fit: cover; display: block;
+}
+.slide-caption {
+  background: linear-gradient(transparent, rgba(0,0,0,.65));
+  color: #fff; padding: 28px 16px 14px;
+  font-size: 0.86rem; font-weight: 500;
+  position: absolute; bottom: 0; left: 0; right: 0;
+}
+
+.slider-btn {
+  position: absolute; top: 45%; transform: translateY(-50%);
+  background: rgba(255,255,255,.92); border: none;
+  width: 38px; height: 38px; border-radius: 50%;
+  cursor: pointer; font-size: 0.88rem; color: var(--primary);
+  transition: var(--transition); z-index: 3;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+.slider-btn:hover { background: var(--white); transform: translateY(-50%) scale(1.1); }
+.slider-btn.prev { left: 10px; }
+.slider-btn.next { right: 10px; }
+
+.slider-dots {
+  position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 7px; z-index: 3;
+}
+.slider-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,.5); cursor: pointer;
+  transition: var(--transition); border: none;
+}
+.slider-dot.active { background: #fff; width: 22px; border-radius: 4px; }
+
+.hero-wave { position: absolute; bottom: 0; left: 0; right: 0; line-height: 0; }
+.hero-wave svg { width: 100%; height: 60px; }
+
+/* ─── STATS BAR ───────────────────────────────────────────── */
+.stats-bar {
+  background: var(--white); box-shadow: var(--shadow); padding: 36px 20px;
+  border-top: 4px solid var(--secondary);
+}
+.stats-container {
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; text-align: center;
+}
+.stat-item { padding: 10px; border-right: 1px solid var(--border); }
+.stat-item:last-child { border: none; }
+.stat-number {
+  display: block; font-family: 'Playfair Display', serif;
+  font-size: 2.4rem; font-weight: 700;
+  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  line-height: 1;
+}
+.stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; margin-top: 6px; display: block; }
+
+/* ─── ABOUT ───────────────────────────────────────────────── */
+.about { padding: 72px 0; background: var(--light-bg); }
+.about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; }
+.about-accent { color: var(--primary); }
+.about-intro  { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin: 12px 0 20px; }
+
+/* bullet list */
+.about-bullets { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+.about-bullets li {
+  display: flex; align-items: flex-start; gap: 11px;
+  background: var(--white); padding: 12px 14px; border-radius: 10px;
+  border: 1px solid var(--border); font-size: 0.88rem; line-height: 1.55;
+  transition: var(--transition);
+}
+.about-bullets li:hover { border-color: var(--secondary); box-shadow: 0 3px 12px rgba(0,87,168,.09); }
+.about-bullets li i { color: var(--green); font-size: 1rem; margin-top: 2px; flex-shrink: 0; }
+.about-bullets li strong { color: var(--dark); }
+
+/* right column */
+.about-stat-card {
+  background: var(--grad); border-radius: 16px; padding: 24px 20px;
+  display: flex; justify-content: space-around; align-items: center;
+  margin-bottom: 16px; box-shadow: var(--shadow-lg);
+}
+.asc-item { text-align: center; color: #fff; }
+.asc-num  { display: block; font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 800; line-height: 1; }
+.asc-lbl  { font-size: 0.75rem; opacity: .85; margin-top: 4px; display: block; }
+.asc-divider { width: 1px; height: 40px; background: rgba(255,255,255,.25); }
+
+.about-highlight {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--white); border-radius: 12px; padding: 14px 16px;
+  border: 1px solid var(--border); margin-bottom: 12px; transition: var(--transition);
+}
+.about-highlight:hover { border-color: var(--secondary); box-shadow: var(--shadow); }
+.about-highlight > i {
+  width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(0,87,168,.10), rgba(0,180,216,.10));
+  display: flex; align-items: center; justify-content: center;
+  color: var(--primary); font-size: 1rem;
+}
+.about-highlight div { display: flex; flex-direction: column; gap: 3px; }
+.about-highlight strong { font-size: 0.88rem; color: var(--dark); display: block; }
+.about-highlight span  { font-size: 0.80rem; color: var(--text-muted); line-height: 1.5; }
+
+/* old grid kept for fallback but hidden */
+.about-grid { display: none; }
+
+/* ─── DOCTORS ─────────────────────────────────────────────── */
+.doctors { padding: 96px 0; background: var(--white); }
+.doctors-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 32px; max-width: 900px; margin: 0 auto; }
+.doctor-card {
+  background: var(--white); border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow); border: 1px solid var(--border);
+  transition: var(--transition); display: flex; flex-direction: column;
+}
+.doctor-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.doctor-photo {
+  position: relative; background: linear-gradient(135deg, #DBEEFF, #D0F5FA);
+  height: 220px; display: flex; align-items: center; justify-content: center;
+}
+.doctor-placeholder { font-size: 5rem; color: rgba(0,87,168,.22); }
+.doctor-photo img { width: 100%; height: 100%; object-fit: cover; }
+.doctor-badge {
+  position: absolute; bottom: 14px; left: 14px;
+  background: var(--grad); color: #fff;
+  padding: 4px 12px; border-radius: 50px; font-size: 0.76rem; font-weight: 600;
+}
+.doctor-info { padding: 24px; flex: 1; display: flex; flex-direction: column; gap: 7px; }
+.doctor-info h3 { font-size: 1.2rem; color: var(--dark); }
+.doctor-qual, .doctor-spec, .doctor-exp { font-size: 0.82rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+.doctor-spec i, .doctor-exp i { color: var(--primary); }
+.doctor-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin: 6px 0 12px; flex: 1; }
+
+/* ─── TREATMENTS ──────────────────────────────────────────── */
+.treatments { padding: 96px 0; background: var(--light-bg); }
+.treatments-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 22px; }
+.treatment-card {
+  background: var(--white); border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow); border: 1px solid var(--border); transition: var(--transition);
+}
+.treatment-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.treatment-img { position: relative; height: 180px; overflow: hidden; background: linear-gradient(135deg,#DBEEFF,#D0F5FA); }
+.treatment-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.treatment-card:hover .treatment-img img { transform: scale(1.08); }
+.treatment-img-placeholder {
+  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem; color: rgba(0,87,168,.20);
+}
+.treatment-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,87,168,.75);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: var(--transition);
+}
+.treatment-card:hover .treatment-overlay { opacity: 1; }
+.overlay-btn {
+  background: #fff; color: var(--primary);
+  padding: 9px 22px; border-radius: 50px; font-weight: 600; font-size: 0.85rem;
+  transition: var(--transition);
+}
+.overlay-btn:hover { background: var(--accent); color: #fff; }
+.treatment-body { padding: 18px 16px 20px; }
+.treatment-body h3 { font-size: 1rem; margin-bottom: 8px; color: var(--dark); }
+.treatment-body p  { color: var(--text-muted); font-size: 0.82rem; line-height: 1.6; margin-bottom: 12px; }
+.treatment-link { font-size: 0.83rem; font-weight: 600; color: var(--primary); display: inline-flex; align-items: center; gap: 5px; transition: var(--transition); }
+.treatment-link:hover { gap: 9px; color: var(--accent); }
+
+/* ─── TESTIMONIALS ────────────────────────────────────────── */
+.testimonials { padding: 96px 0; background: var(--white); }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-bottom: 40px; }
+.testimonial-card {
+  background: var(--light-bg); border-radius: var(--radius); padding: 30px 24px;
+  border: 1px solid var(--border); transition: var(--transition); position: relative;
+}
+.testimonial-card::before {
+  content: '"'; position: absolute; top: 16px; right: 20px;
+  font-size: 4rem; font-family: serif; color: rgba(0,87,168,.09); line-height: 1;
+}
+.testimonial-card.featured {
+  background: var(--grad); color: #fff;
+  border-color: transparent; transform: scale(1.03); box-shadow: var(--shadow-lg);
+}
+.testimonial-card.featured .review-text,
+.testimonial-card.featured .reviewer-name { color: #fff; }
+.testimonial-card.featured .reviewer-tag { color: rgba(255,255,255,.75); }
+.testimonial-card.featured::before { color: rgba(255,255,255,.15); }
+.testimonial-card:not(.featured):hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 14px; letter-spacing: 2px; }
+.review-text { color: var(--text); line-height: 1.7; font-size: 0.92rem; margin-bottom: 20px; }
+.reviewer { display: flex; align-items: center; gap: 12px; }
+.reviewer-avatar {
+  width: 44px; height: 44px; background: var(--grad);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1.1rem; flex-shrink: 0;
+}
+.testimonial-card.featured .reviewer-avatar { background: rgba(255,255,255,.25); }
+.reviewer div { display: flex; flex-direction: column; gap: 2px; }
+.reviewer-name { font-weight: 600; font-size: 0.9rem; }
+.reviewer-tag  { font-size: 0.76rem; color: var(--text-muted); }
+
+.google-rating-box {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  background: var(--light-bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px 30px;
+  max-width: 440px; margin: 0 auto;
+}
+.google-logo  { height: 26px; }
+.google-score { font-size: 1.8rem; font-weight: 800; color: var(--dark); }
+.google-stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 2px; }
+.google-count { color: var(--text-muted); font-size: 0.85rem; }
+
+/* ─── GALLERY ─────────────────────────────────────────────── */
+.gallery { padding: 96px 0; background: var(--light-bg); }
+.gallery-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.gallery-item { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,87,168,.65);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: var(--transition); color: #fff; font-size: 1.5rem;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.92); z-index: 9000; align-items: center; justify-content: center; }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+.lightbox-close, .lightbox-prev, .lightbox-next {
+  position: absolute; background: rgba(255,255,255,.15); border: none;
+  color: #fff; width: 46px; height: 46px; border-radius: 50%;
+  cursor: pointer; font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center; transition: var(--transition);
+}
+.lightbox-close:hover,.lightbox-prev:hover,.lightbox-next:hover { background: rgba(255,255,255,.30); }
+.lightbox-close { top: 20px; right: 20px; }
+.lightbox-prev  { top: 50%; left: 16px; transform: translateY(-50%); }
+.lightbox-next  { top: 50%; right: 16px; transform: translateY(-50%); }
+
+/* ─── APPOINTMENT ─────────────────────────────────────────── */
+.appointment { padding: 96px 0; background: var(--white); }
+.appointment-wrapper { display: grid; grid-template-columns: 1fr 1.6fr; gap: 56px; align-items: start; }
+.appointment-info { padding-top: 10px; }
+.appointment-info h2 { margin-bottom: 14px; }
+.appointment-info > p { color: var(--text-muted); margin-bottom: 28px; line-height: 1.7; }
+
+.contact-quick { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+.quick-link {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px; border-radius: 12px;
+  background: var(--light-bg); border: 1px solid var(--border); transition: var(--transition);
+}
+.quick-link:hover { border-color: var(--primary); background: #EBF5FF; }
+.quick-link i {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--grad); display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1rem; flex-shrink: 0;
+}
+.quick-link.wa i { background: linear-gradient(135deg,#25D366,#128C7E); }
+.quick-link div { display: flex; flex-direction: column; gap: 2px; }
+.quick-link span { font-size: 0.75rem; color: var(--text-muted); }
+.quick-link strong { font-size: 0.9rem; color: var(--dark); }
+
+.hours-box {
+  display: flex; align-items: center; gap: 14px;
+  background: linear-gradient(135deg, rgba(0,87,168,.07), rgba(0,180,216,.07));
+  padding: 16px 18px; border-radius: 12px; border: 1px solid rgba(0,87,168,.15);
+}
+.hours-box i { color: var(--primary); font-size: 1.2rem; }
+.hours-box div { display: flex; flex-direction: column; gap: 3px; }
+.hours-box strong { font-size: 0.88rem; color: var(--dark); }
+.hours-box span { font-size: 0.82rem; color: var(--text-muted); }
+
+.appointment-form {
+  background: var(--white); border-radius: 20px; padding: 36px;
+  box-shadow: var(--shadow-lg); border: 1px solid var(--border);
+}
+.appointment-form h3 { font-size: 1.4rem; margin-bottom: 24px; color: var(--dark); }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full-width { grid-column: 1 / -1; }
+.form-group label { font-size: 0.82rem; font-weight: 600; color: var(--text); }
+.form-group input, .form-group select, .form-group textarea {
+  padding: 11px 14px; border: 1.5px solid var(--border); border-radius: 9px;
+  font-family: inherit; font-size: 0.9rem; color: var(--text);
+  background: var(--light-bg); outline: none; transition: var(--transition);
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus {
+  border-color: var(--primary); background: #fff; box-shadow: 0 0 0 3px rgba(0,87,168,.10);
+}
+.form-group textarea { resize: vertical; }
+.form-note { text-align: center; color: var(--text-muted); font-size: 0.78rem; margin-top: 12px; }
+
+/* ─── CONTACT ─────────────────────────────────────────────── */
+.contact { padding: 96px 0; background: var(--light-bg); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: start; }
+.contact-details { display: flex; flex-direction: column; gap: 16px; }
+.contact-card {
+  background: var(--white); padding: 22px 20px; border-radius: var(--radius);
+  border: 1px solid var(--border); display: flex; gap: 14px; align-items: flex-start;
+  transition: var(--transition);
+}
+.contact-card:hover { border-color: var(--secondary); box-shadow: var(--shadow); }
+.contact-icon {
+  width: 44px; height: 44px; border-radius: 10px; background: var(--grad);
+  display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1rem; flex-shrink: 0;
+}
+.contact-card h4 { font-size: 0.88rem; font-weight: 700; color: var(--dark); margin-bottom: 5px; }
+.contact-card p  { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
+.contact-card a  { color: var(--primary); font-weight: 600; }
+.open-badge { display: inline-block; background: #E8F5E9; color: #2E7D32; padding: 2px 10px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; margin-top: 4px; }
+.contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.map-container { border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); }
+
+/* ─── FOOTER ──────────────────────────────────────────────── */
+.footer { background: var(--dark); color: rgba(255,255,255,.80); }
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1.4fr 1.4fr; gap: 40px;
+  padding: 60px 40px; max-width: 1200px; margin: 0 auto;
+}
+.footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.footer-logo-img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+.footer-logo-name { display: block; font-family: 'Playfair Display', serif; color: #fff; font-size: 1.05rem; font-weight: 700; }
+.footer-logo-sub  { display: block; font-size: 0.72rem; color: rgba(255,255,255,.55); }
+.footer-desc { font-size: 0.85rem; line-height: 1.7; margin-bottom: 8px; }
+.footer-telugu { font-size: 0.8rem; color: rgba(255,255,255,.45); margin-bottom: 18px; }
+.footer-social { display: flex; gap: 10px; }
+.footer-social a {
+  width: 36px; height: 36px; background: rgba(255,255,255,.10); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.75); font-size: 0.9rem; transition: var(--transition);
+}
+.footer-social a:hover { background: var(--primary); color: #fff; }
+.footer-links h4,.footer-treatments h4,.footer-contact h4 {
+  color: #fff; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 700;
+  margin-bottom: 16px; letter-spacing: .5px;
+}
+.footer-links ul li,.footer-treatments ul li { margin-bottom: 9px; }
+.footer-links a,.footer-treatments a { color: rgba(255,255,255,.65); font-size: 0.85rem; transition: var(--transition); }
+.footer-links a:hover,.footer-treatments a:hover { color: var(--secondary); padding-left: 5px; }
+.footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 0.82rem; color: rgba(255,255,255,.65); }
+.footer-contact-item i { color: var(--secondary); font-size: 0.9rem; margin-top: 2px; flex-shrink: 0; }
+.footer-contact-item a { color: rgba(255,255,255,.65); transition: var(--transition); }
+.footer-contact-item a:hover { color: var(--secondary); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.10); padding: 20px 40px;
+  max-width: 1200px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.8rem; color: rgba(255,255,255,.45); flex-wrap: wrap; gap: 10px;
+}
+
+/* ─── FLOATING BUTTONS ────────────────────────────────────── */
+.float-whatsapp {
+  position: fixed; bottom: 28px; right: 28px;
+  width: 58px; height: 58px; background: #25D366; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1.6rem;
+  box-shadow: 0 6px 24px rgba(37,211,102,.45); z-index: 900; transition: var(--transition);
+  animation: waPulse 2.5s infinite;
+}
+@keyframes waPulse { 0%{box-shadow:0 0 0 0 rgba(37,211,102,.5);} 70%{box-shadow:0 0 0 16px rgba(37,211,102,0);} 100%{box-shadow:0 0 0 0 rgba(37,211,102,0);} }
+.float-whatsapp:hover { transform: scale(1.12); background: #128C7E; animation: none; }
+.float-tooltip {
+  position: absolute; right: 68px;
+  background: var(--dark); color: #fff; padding: 6px 12px;
+  border-radius: 8px; font-size: 0.78rem; font-weight: 500;
+  white-space: nowrap; opacity: 0; pointer-events: none; transition: var(--transition);
+}
+.float-whatsapp:hover .float-tooltip { opacity: 1; }
+.float-call {
+  position: fixed; bottom: 28px; left: 28px;
+  width: 52px; height: 52px; background: var(--grad);
+  border-radius: 50%; display: none; align-items: center; justify-content: center;
+  color: #fff; font-size: 1.2rem; box-shadow: var(--shadow-lg); z-index: 900; transition: var(--transition);
+}
+.float-call:hover { transform: scale(1.1); }
+.back-to-top {
+  position: fixed; bottom: 96px; right: 28px;
+  width: 42px; height: 42px; background: var(--primary); color: #fff;
+  border: none; border-radius: 50%; cursor: pointer; font-size: 0.9rem;
+  display: none; align-items: center; justify-content: center;
+  box-shadow: var(--shadow); transition: var(--transition); z-index: 800;
+}
+.back-to-top.visible { display: flex; }
+.back-to-top:hover { background: var(--primary-dk); transform: translateY(-2px); }
+
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 1100px) { .treatments-grid { grid-template-columns: repeat(3,1fr); } }
+
+@media (max-width: 960px) {
+  .logo-icon-wrap { width: 60px; height: 60px; }
+  .logo-main { font-size: 18px; }
+}
+
+@media (max-width: 900px) {
+  .hero-container { grid-template-columns: 1fr; text-align: center; }
+  .trust-badges { grid-template-columns: 1fr 1fr; justify-items: center; }
+  .hero-buttons  { justify-content: center; }
+  .hero-right    { max-width: 500px; margin: 0 auto; }
+  .hero-boy-wrap { left: -40px; }
+  .hero-boy      { width: 150px; }
+  .about-layout  { grid-template-columns: 1fr; }
+  .doctors-grid  { grid-template-columns: 1fr; max-width: 420px; }
+  .treatments-grid { grid-template-columns: repeat(2,1fr); }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonial-card.featured { transform: none; }
+  .appointment-wrapper { grid-template-columns: 1fr; }
+  .contact-grid  { grid-template-columns: 1fr; }
+  .footer-top    { grid-template-columns: 1fr 1fr; }
+  .stats-container { grid-template-columns: repeat(2,1fr); }
+  .stat-item { border-right: none; }
+}
+
+@media (max-width: 640px) {
+  .nav-links {
+    display: none; position: absolute; top: 78px; left: 0; right: 0;
+    background: var(--white); flex-direction: column;
+    padding: 16px 20px 24px; border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow); gap: 2px;
+  }
+  .nav-links.open { display: flex; }
+  .hamburger { display: flex; }
+  .about-layout  { grid-template-columns: 1fr; }
+  .treatments-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1fr; padding: 40px 20px; }
+  .footer-bottom { flex-direction: column; text-align: center; padding: 16px 20px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .appointment-form { padding: 24px 18px; }
+  .contact-actions { flex-direction: column; }
+  .float-call { display: flex; }
+  .hero-heading { font-size: 2rem; }
+  .hero-boy { width: 110px; }
+}
+
+@media (max-width: 400px) {
+  .treatments-grid { grid-template-columns: 1fr; }
+  .trust-badges    { grid-template-columns: 1fr; }
+  .gallery-grid    { grid-template-columns: 1fr; }
+  .hero-boy-wrap   { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="tb-left">
+      <a href="tel:+919912339995"><i class="fas fa-phone-alt"></i>+91 99123 39995</a>
+      <span><i class="fas fa-clock"></i>Mon – Sat: 10 AM – 8:30 PM</span>
+    </div>
+    <div class="tb-right">
+      <a href="https://wa.me/919912339995" target="_blank"><i class="fab fa-whatsapp"></i>WhatsApp Us</a>
+      <span><i class="fas fa-map-marker-alt"></i>Warangal, Telangana</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="nav-logo">
+      <div class="logo-icon-wrap">
+        <img src="images/logo-icon.jpg" alt="Sri Balaji Dental Logo" class="logo-img"
+          onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-tooth\' style=\'font-size:32px;color:#fff\'></i>'"/>
+      </div>
+      <div class="logo-text">
+        <span class="logo-main">Sri Balaji Dental</span>
+        <span class="logo-sub">&amp; Implant Centre</span>
+        <span class="logo-loc"><i class="fas fa-map-marker-alt"></i> Warangal, Telangana</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"         class="nav-link active">Home</a></li>
+      <li><a href="#about"        class="nav-link">About</a></li>
+      <li><a href="#doctors"      class="nav-link">Doctors</a></li>
+      <li><a href="#treatments"   class="nav-link">Treatments</a></li>
+      <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+      <li><a href="#gallery"      class="nav-link">Gallery</a></li>
+      <li><a href="#contact"      class="nav-link">Contact</a></li>
+      <li><a href="#appointment"  class="nav-link btn-nav"><i class="fas fa-calendar-check"></i>Book Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-award"></i> Warangal's #1 Trusted Dental Care</div>
+      <h1 class="hero-heading">Healthy Smiles<br/><span class="accent">Start Here</span></h1>
+      <p class="hero-subheading">Advanced Dental Care, Implants, Root Canal, Braces, Cosmetic Dentistry in Warangal.</p>
+      <p class="hero-telugu">శ్రీ బాలాజీ డెంటల్ హాస్పిటల్</p>
+      <div class="hero-buttons">
+        <a href="#appointment" class="btn btn-hero-book"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+        <a href="https://wa.me/919912339995" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://maps.google.com/?q=Sri+Balaji+Dental+Warangal" target="_blank" class="btn btn-outline" style="background:rgba(255,255,255,.95);"><i class="fas fa-map-marker-alt"></i> Find Us</a>
+      </div>
+      <div class="trust-badges">
+        <div class="trust-item"><i class="fas fa-check-circle"></i> 5-Star Rated</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> Experienced Team</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> Modern Equipment</div>
+        <div class="trust-item"><i class="fas fa-check-circle"></i> Affordable</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-boy-wrap">
+        <img src="images/boy.png" alt="Happy Child" class="hero-boy"/>
+      </div>
+      <div class="hero-slider">
+        <div class="slider-track" id="sliderTrack">
+          <div class="slide-item"><img src="images/clinic-exterior.jpg" alt="Sri Balaji Dental Clinic"/><div class="slide-caption">Our Clinic – Warangal's Trusted Dental Care</div></div>
+          <div class="slide-item"><img src="images/clinic-treatment-room1.jpg" alt="Treatment Room"/><div class="slide-caption">Modern, Hygienic Treatment Rooms</div></div>
+          <div class="slide-item"><img src="images/clinic-treatment-room2.jpg" alt="Dental Chair"/><div class="slide-caption">Advanced Dental Chairs &amp; Equipment</div></div>
+          <div class="slide-item"><img src="images/clinic-reception.jpg" alt="Reception Area"/><div class="slide-caption">Warm, Welcoming Reception</div></div>
+          <div class="slide-item"><img src="implant.png" alt="Dental Implants"/><div class="slide-caption">Dental Implants – Stronger Roots. Natural Smile.</div></div>
+          <div class="slide-item"><img src="rootcanal.png" alt="Root Canal"/><div class="slide-caption">Root Canal – Save Your Natural Tooth</div></div>
+          <div class="slide-item"><img src="braces.png" alt="Braces"/><div class="slide-caption">Braces &amp; Aligners – Straighten at Any Age</div></div>
+          <div class="slide-item"><img src="cosmetic.png" alt="Cosmetic"/><div class="slide-caption">Cosmetic Dentistry – Your Smile. Your Style.</div></div>
+          <div class="slide-item"><img src="cleaning.png" alt="Cleaning"/><div class="slide-caption">Teeth Cleaning – Regular. Stronger Smile.</div></div>
+        </div>
+        <button class="slider-btn prev" id="sliderPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next" id="sliderNext"><i class="fas fa-chevron-right"></i></button>
+        <div class="slider-dots" id="sliderDots"></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/></svg></div>
+</section>
+
+<!-- STATS -->
+<section class="stats-bar">
+  <div class="stats-container">
+    <div class="stat-item"><span class="stat-number">5.0</span><span class="stat-label">★ Google Rating</span></div>
+    <div class="stat-item"><span class="stat-number">7+</span><span class="stat-label">Patient Reviews</span></div>
+    <div class="stat-item"><span class="stat-number">1000+</span><span class="stat-label">Happy Smiles</span></div>
+    <div class="stat-item"><span class="stat-number">10+</span><span class="stat-label">Years Experience</span></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-left">
+        <span class="section-tag">Why Choose Us</span>
+        <h2>Why Choose <span class="about-accent">Sri Balaji Dental</span>?</h2>
+        <p class="about-intro">Compassionate care with the latest technology — here's what makes us Warangal's most trusted dental clinic.</p>
+        <ul class="about-bullets">
+          <li><i class="fas fa-check-circle"></i><div><strong>Modern Equipment</strong> — Digital X-rays, rotary endodontics &amp; laser dentistry for precise, pain-free treatment.</div></li>
+          <li><i class="fas fa-check-circle"></i><div><strong>Experienced Dentists</strong> — BDS &amp; MDS qualified surgeons with 8–10+ years of specialized expertise.</div></li>
+          <li><i class="fas fa-check-circle"></i><div><strong>Personalized Plans</strong> — Customized treatment plan tailored to every patient's unique needs.</div></li>
+          <li><i class="fas fa-check-circle"></i><div><strong>Hygienic &amp; Comfortable</strong> — Calm, welcoming clinic that eases dental anxiety for all ages.</div></li>
+          <li><i class="fas fa-check-circle"></i><div><strong>Affordable Pricing</strong> — Transparent, competitive prices with no hidden charges, ever.</div></li>
+          <li><i class="fas fa-check-circle"></i><div><strong>5-Star Rated</strong> — Trusted by 1000+ patients with a perfect Google rating across Warangal.</div></li>
+        </ul>
+        <a href="#appointment" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Free Consultation</a>
+      </div>
+      <div class="about-right">
+        <div class="about-stat-card">
+          <div class="asc-item"><span class="asc-num">5.0★</span><span class="asc-lbl">Google Rating</span></div>
+          <div class="asc-divider"></div>
+          <div class="asc-item"><span class="asc-num">1000+</span><span class="asc-lbl">Happy Patients</span></div>
+          <div class="asc-divider"></div>
+          <div class="asc-item"><span class="asc-num">10+</span><span class="asc-lbl">Years Experience</span></div>
+        </div>
+        <div class="about-highlight"><i class="fas fa-award"></i><div><strong>Award-Winning Dental Care</strong><span>Warangal's most trusted dental clinic — recognized by our patients.</span></div></div>
+        <div class="about-highlight"><i class="fas fa-shield-virus"></i><div><strong>Sterilization Standards</strong><span>Autoclave sterilization &amp; disposable kits — your safety first.</span></div></div>
+        <div class="about-highlight"><i class="fas fa-rupee-sign"></i><div><strong>EMI &amp; Insurance Accepted</strong><span>Cashless treatment options to make quality dental care accessible to all.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTORS -->
+<section class="doctors" id="doctors">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Our Team</span>
+      <h2>Meet Our Dental Experts</h2>
+      <p>Qualified dental professionals dedicated to your oral health and beautiful smile.</p>
+    </div>
+    <div class="doctors-grid">
+      <div class="doctor-card">
+        <div class="doctor-photo">
+          <img src="images/dr-sandeep.jpg" alt="Dr. Sandeep"/>
+          <div class="doctor-badge">Cosmetic Dentist</div>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. G. Sandeep</h3>
+          <span class="doctor-qual">BDS - Cosmetric Dental surgen</span>
+          <span class="doctor-spec"><i class="fas fa-tooth"></i> Dental Surgeon & Cosmetic Dentistry Expert</span>
+          <span class="doctor-exp"><i class="fas fa-clock"></i> 15+ Years Experience</span>
+          <p class="doctor-desc">Specializes in smile makeovers, veneers, teeth whitening, cosmetic bonding, and facial aesthetics to enhance your smile while maintaining natural beauty and long-term oral health.</p>
+          <a href="#appointment" class="btn btn-primary btn-sm">Book Consultation</a>
+        </div>
+      </div>
+      <div class="doctor-card">
+        <div class="doctor-photo">
+          <img src="images/boy.png" alt="Dr. k. Soumya"/>
+          <div class="doctor-badge">Prosthodontist</div>
+        </div>
+        <div class="doctor-info">
+          <h3>Dr. k. Soumya</h3>
+          <span class="doctor-qual">BDS, MDS – Prosthodontist</span>
+          <span class="doctor-spec"><i class="fas fa-tooth"></i> Prosthodontist & Cosmetic Dentist</span>
+          <span class="doctor-exp"><i class="fas fa-clock"></i> 10+ Years Experience</span>
+          <p class="doctor-desc">Specializes in crowns, bridges, dentures, implants, and full-mouth rehabilitation, restoring healthy, functional, and natural-looking smiles.</p>
+          <a href="#appointment" class="btn btn-primary btn-sm">Book Consultation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TREATMENTS -->
+<section class="treatments" id="treatments">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Our Services</span>
+      <h2>Comprehensive Dental Treatments</h2>
+      <p>From routine checkups to advanced implants — complete dental care under one roof.</p>
+    </div>
+    <div class="treatments-grid">
+      <div class="treatment-card">
+        <div class="treatment-img"><img src="implant.png" alt="Dental Implants"/><div class="treatment-overlay"><a href="#appointment" class="overlay-btn">Book Now</a></div></div>
+        <div class="treatment-body"><h3>Dental Implants</h3><p>Permanent, natural-looking tooth replacements that restore full function and confidence.</p><a href="#appointment" class="treatment-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <div class="treatment-card">
+        <div class="treatment-img"><img src="rootcanal.png" alt="Root Canal"/><div class="treatment-overlay"><a href="#appointment" class="overlay-btn">Book Now</a></div></div>
+        <div class="treatment-body"><h3>Root Canal Treatment</h3><p>Save your natural tooth and relieve pain with our modern, near-painless root canal procedure.</p><a href="#appointment" class="treatment-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <div class="treatment-card">
+        <div class="treatment-img"><img src="cleaning.png" alt="Teeth Cleaning"/><div class="treatment-overlay"><a href="#appointment" class="overlay-btn">Book Now</a></div></div>
+        <div class="treatment-body"><h3>Teeth Cleaning &amp; Scaling</h3><p>Professional scaling and polishing to remove plaque, tartar, and keep your gums healthy.</p><a href="#appointment" class="treatment-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <div class="treatment-card">
+        <div class="treatment-img"><img src="braces.png" alt="Braces"/><div class="treatment-overlay"><a href="#appointment" class="overlay-btn">Book Now</a></div></div>
+        <div class="treatment-body"><h3>Braces &amp; Aligners</h3><p>Metal, ceramic, and clear aligners to straighten teeth and perfect your bite at any age.</p><a href="#appointment" class="treatment-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <div class="treatment-card">
+        <div class="treatment-img"><img src="cosmetic.png" alt="Cosmetic"/><div class="treatment-overlay"><a href="#appointment" class="overlay-btn">Book Now</a></div></div>
+        <div class="treatment-body"><h3>Cosmetic Dentistry</h3><p>Veneers, whitening, bonding, and smile makeovers tailored precisely to your face and goals.</p><a href="#appointment" class="treatment-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <div class="treatment-card">
+        <div class="treatment-img"><img src="extraction.png" alt="Extraction"/><div class="treatment-overlay"><a href="#appointment" class="overlay-btn">Book Now</a></div></div>
+        <div class="treatment-body"><h3>Tooth Extraction</h3><p>Safe, comfortable, hygienic extractions with minimal discomfort and quick recovery.</p><a href="#appointment" class="treatment-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <div class="treatment-card">
+        <div class="treatment-img"><img src="images/Pediatric Dentistry.png" alt="Pediatric" style="object-position:top"/><div class="treatment-overlay"><a href="#appointment" class="overlay-btn">Book Now</a></div></div>
+        <div class="treatment-body"><h3>Pediatric Dentistry</h3><p>Gentle, child-friendly dental care in a fun, welcoming environment for lifelong healthy habits.</p><a href="#appointment" class="treatment-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <div class="treatment-card">
+        <div class="treatment-img"><img src="images/smileMakeOver.png" alt="Smile Makeover"/><div class="treatment-overlay"><a href="#appointment" class="overlay-btn">Book Now</a></div></div>
+        <div class="treatment-body"><h3>Smile Makeover</h3><p>A full transformation combining multiple procedures to give you the smile you've always dreamed of.</p><a href="#appointment" class="treatment-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Patient Stories</span>
+      <h2>What Our Patients Say</h2>
+      <p>Real experiences from real patients — proud of every smile we've helped create.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Good clinic with best doctors in Warangal city. Staff are well behaved and clinic is situated in a prime location. Highly recommended!"</p>
+        <div class="reviewer"><div class="reviewer-avatar"><i class="fas fa-user"></i></div><div><span class="reviewer-name">Rajesh K.</span><span class="reviewer-tag">Google Review</span></div></div>
+      </div>
+      <div class="testimonial-card featured">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"The clinic is well-maintained, and the staff is friendly and professional. Treatment was very comfortable. Highly recommend Sri Balaji Dental!"</p>
+        <div class="reviewer"><div class="reviewer-avatar"><i class="fas fa-user"></i></div><div><span class="reviewer-name">Sunita P.</span><span class="reviewer-tag">Google Review</span></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"I went for tooth removal. Good doctors and excellent treatment. No pain at all! The clinic is very clean and hygienic. Will definitely visit again."</p>
+        <div class="reviewer"><div class="reviewer-avatar"><i class="fas fa-user"></i></div><div><span class="reviewer-name">Mohammed A.</span><span class="reviewer-tag">Google Review</span></div></div>
+      </div>
+    </div>
+    <div class="google-rating-box">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo"/>
+      <span class="google-score">5.0</span>
+      <span class="google-stars">★★★★★</span>
+      <span class="google-count">Based on 7 Reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Gallery</span>
+      <h2>Our Clinic &amp; Treatments</h2>
+      <p>Take a look inside Sri Balaji Dental &amp; Implant Centre.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/clinic-exterior.jpg" alt="Clinic Exterior"/><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item"><img src="images/clinic-reception.jpg" alt="Reception Area"/><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item"><img src="images/clinic-doctor-room.jpg" alt="Doctor's Room"/><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item"><img src="images/clinic-treatment-room1.jpg" alt="Treatment Room"/><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item"><img src="images/clinic-treatment-room2.jpg" alt="Dental Chair"/><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item"><img src="images/clinic-treatment-progress1.jpg" alt="Treatment in Progress"/><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item"><img src="images/clinic-treatment-progress2.jpg" alt="Doctor with Patient"/><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item"><img src="images/clinic-xray-machine.jpg" alt="Digital X-Ray Setup"/><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item"><img src="images/clinic-xray-scan1.jpg" alt="X-Ray Scan in Progress"/><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item"><img src="images/clinic-xray-scan2.jpg" alt="X-Ray Scan in Progress"/><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      
+  </div>
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+    <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+    <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+    <img src="" alt="" id="lightboxImg"/>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section class="appointment" id="appointment">
+  <div class="container">
+    <div class="appointment-wrapper">
+      <div class="appointment-info">
+        <span class="section-tag">Book Now</span>
+        <h2>Schedule Your Visit</h2>
+        <p>Fill in your details and we'll confirm via WhatsApp. Fast, easy, no waiting on hold.</p>
+        <div class="contact-quick">
+          <a href="tel:+919912339995" class="quick-link">
+            <i class="fas fa-phone"></i>
+            <div><span>Call Us</span><strong>+91 99123 39995</strong></div>
+          </a>
+          <a href="https://wa.me/919912339995" target="_blank" class="quick-link wa">
+            <i class="fab fa-whatsapp"></i>
+            <div><span>WhatsApp</span><strong>+91 99123 39995</strong></div>
+          </a>
+        </div>
+        <div class="hours-box">
+          <i class="fas fa-clock"></i>
+          <div><strong>Working Hours</strong><span>Monday – Saturday: 10:00 AM – 8:30 PM</span></div>
+        </div>
+      </div>
+      <div class="appointment-form">
+        <h3>Book an Appointment</h3>
+        <div class="form-grid">
+          <div class="form-group"><label>Patient Name *</label><input type="text" id="patientName" placeholder="Your full name"/></div>
+          <div class="form-group"><label>Phone Number *</label><input type="tel" id="patientPhone" placeholder="+91 XXXXX XXXXX"/></div>
+          <div class="form-group"><label>Email Address</label><input type="email" id="patientEmail" placeholder="your@email.com"/></div>
+          <div class="form-group"><label>Preferred Date *</label><input type="date" id="preferredDate"/></div>
+          <div class="form-group"><label>Preferred Time *</label>
+            <select id="preferredTime">
+              <option value="">Select time</option>
+              <option>10:00 AM – 11:00 AM</option><option>11:00 AM – 12:00 AM</option>
+              <option>11:00 AM – 12:00 PM</option><option>12:00 PM – 1:00 PM</option>
+              <option>2:00 PM – 3:00 PM</option><option>3:00 PM – 4:00 PM</option>
+              <option>4:00 PM – 5:00 PM</option><option>5:00 PM – 6:00 PM</option>
+              <option>6:00 PM – 7:00 PM</option><option>7:00 PM – 8:00 PM</option>
+              <option>8:00 PM – 9:00 PM</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Treatment Required *</label>
+            <select id="treatmentType">
+              <option value="">Select treatment</option>
+              <option>Dental Implants</option><option>Root Canal Treatment</option>
+              <option>Teeth Cleaning &amp; Scaling</option><option>Braces &amp; Aligners</option>
+              <option>Cosmetic Dentistry</option><option>Tooth Extraction</option>
+              <option>Pediatric Dentistry</option><option>Smile Makeover</option>
+              <option>General Checkup</option><option>Other</option>
+            </select>
+          </div>
+          <div class="form-group full-width"><label>Message / Symptoms</label><textarea id="message" rows="3" placeholder="Describe your concern..."></textarea></div>
+        </div>
+        <button class="btn btn-primary btn-full" onclick="bookAppointment()"><i class="fab fa-whatsapp"></i> Confirm via WhatsApp</button>
+        <p class="form-note">Your request will be sent directly via WhatsApp for instant confirmation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Find Us</span>
+      <h2>Contact &amp; Location</h2>
+      <p>Conveniently located near Vivekananda College in Warangal.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-details">
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div><h4>Our Address</h4><p>Opposite HP Petrol Pump, Vivekananda College,<br/>Kashibugga, LB Nagar, Warangal, Telangana 506002</p></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+          <div><h4>Phone &amp; WhatsApp</h4><p><a href="tel:+919912339995">+91 99123 39995</a></p></div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-clock"></i></div>
+          <div><h4>Working Hours</h4><p>Monday – Saturday: 10:00 AM – 8:30 PM<br/><span class="open-badge">Open Today</span></p></div>
+        </div>
+        <div class="contact-actions">
+          <a href="tel:+919912339995" class="btn btn-primary"><i class="fas fa-phone"></i> Call Now</a>
+          <a href="https://maps.google.com/?q=Sri+Balaji+Dental+Warangal" target="_blank" class="btn btn-outline"><i class="fas fa-directions"></i> Directions</a>
+          <a href="https://wa.me/919912339995" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+      <div class="map-container">
+        <iframe src="https://maps.google.com/maps?q=Sri+Balaji+Dental+Implant+Centre+Warangal&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%" height="400" style="border:0;border-radius:16px;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="images/logo-icon.jpg" alt="Sri Balaji Dental" class="footer-logo-img"/>
+        <div><span class="footer-logo-name">Sri Balaji Dental</span><span class="footer-logo-sub">&amp; Implant Centre</span></div>
+      </div>
+      <p class="footer-desc">Advanced dental care with compassion. Serving Warangal with modern treatments at affordable prices.</p>
+      <p class="footer-telugu">శ్రీ బాలాజీ డెంటల్ హాస్పిటల్</p>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/919912339995"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li>
+        <li><a href="#doctors">Our Doctors</a></li><li><a href="#treatments">Treatments</a></li>
+        <li><a href="#testimonials">Testimonials</a></li><li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-treatments">
+      <h4>Treatments</h4>
+      <ul>
+        <li><a href="#appointment">Dental Implants</a></li>
+        <li><a href="#appointment">Root Canal</a></li>
+        <li><a href="#appointment">Teeth Cleaning</a></li>
+        <li><a href="#appointment">Braces &amp; Aligners</a></li>
+        <li><a href="#appointment">Cosmetic Dentistry</a></li>
+        <li><a href="#appointment">Tooth Extraction</a></li>
+        <li><a href="#appointment">Pediatric Dentistry</a></li>
+        <li><a href="#appointment">Smile Makeover</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact Info</h4>
+      <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Opp HP Petrol Pump, Vivekananda College, Kashibugga, LB Nagar, Warangal – 506002</span></div>
+      <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+919912339995">+91 99123 39995</a></div>
+      <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon – Sat: 10:00 AM – 8:30 PM</span></div>
+      <div class="footer-contact-item"><i class="fas fa-star"></i><span>5.0 ★ Google Rating (7 Reviews)</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Sri Balaji Dental &amp; Implant Centre, Warangal. All Rights Reserved.</p>
+    <p>Designed with <i class="fas fa-heart" style="color:#e74c3c"></i> for better smiles.</p>
+  </div>
+</footer>
+
+<!-- FLOATING -->
+<a href="https://wa.me/919912339995?text=Hello%2C%20I%20want%20to%20book%20an%20appointment%20at%20Sri%20Balaji%20Dental." target="_blank" class="float-whatsapp">
+  <i class="fab fa-whatsapp"></i><span class="float-tooltip">Chat with us</span>
+</a>
+<a href="tel:+919912339995" class="float-call"><i class="fas fa-phone"></i></a>
+<button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+<script>
+// ── NAVBAR SCROLL ──────────────────────────────────────────
+const navbar    = document.getElementById('navbar');
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+  backToTop.classList.toggle('visible', window.scrollY > 400);
+  updateActiveNav();
+});
+backToTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+// ── HAMBURGER ──────────────────────────────────────────────
+const ham      = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+ham.addEventListener('click', () => {
+  ham.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => {
+  ham.classList.remove('open'); navLinks.classList.remove('open');
+}));
+
+// ── ACTIVE NAV ─────────────────────────────────────────────
+function updateActiveNav() {
+  let cur = '';
+  document.querySelectorAll('section[id]').forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) cur = s.id;
+  });
+  document.querySelectorAll('.nav-link[href^="#"]').forEach(l => {
+    l.classList.toggle('active', l.getAttribute('href') === '#' + cur);
+  });
+}
+
+// ── SMOOTH SCROLL ──────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); window.scrollTo({top: t.getBoundingClientRect().top + scrollY - 78, behavior:'smooth'}); }
+  });
+});
+
+// ── SCROLL ANIMATIONS ──────────────────────────────────────
+// Mark elements with anim class FIRST, so they start hidden
+// This way: if JS fails = elements visible; if JS runs = nice animation
+document.querySelectorAll('[data-animate]').forEach(el => el.classList.add('anim'));
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      obs.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.10});
+document.querySelectorAll('[data-animate]').forEach(el => obs.observe(el));
+
+// ── SLIDER ─────────────────────────────────────────────────
+(function() {
+  const track = document.getElementById('sliderTrack');
+  const dotsW = document.getElementById('sliderDots');
+  const prev  = document.getElementById('sliderPrev');
+  const next  = document.getElementById('sliderNext');
+  if (!track) return;
+  const slides = track.querySelectorAll('.slide-item');
+  const total  = slides.length;
+  let cur = 0, timer;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'slider-dot' + (i===0?' active':'');
+    d.addEventListener('click', () => go(i));
+    dotsW.appendChild(d);
+  });
+
+  function go(n) {
+    cur = (n + total) % total;
+    track.style.transform = `translateX(-${cur * 100}%)`;
+    dotsW.querySelectorAll('.slider-dot').forEach((d,i) => d.classList.toggle('active', i===cur));
+  }
+  function auto() { clearInterval(timer); timer = setInterval(() => go(cur+1), 4500); }
+
+  prev.addEventListener('click', () => { go(cur-1); auto(); });
+  next.addEventListener('click', () => { go(cur+1); auto(); });
+
+  let tx = 0;
+  track.parentElement.addEventListener('touchstart', e => tx = e.touches[0].clientX);
+  track.parentElement.addEventListener('touchend',   e => {
+    const d = tx - e.changedTouches[0].clientX;
+    if (Math.abs(d) > 40) { go(cur + (d>0?1:-1)); auto(); }
+  });
+  go(0); auto();
+})();
+
+// ── LIGHTBOX ───────────────────────────────────────────────
+(function() {
+  const lb   = document.getElementById('lightbox');
+  const lbi  = document.getElementById('lightboxImg');
+  const imgs = Array.from(document.querySelectorAll('.gallery-item img'));
+  let idx = 0;
+  function open(i) { idx=i; lbi.src=imgs[i].src; lb.classList.add('open'); document.body.style.overflow='hidden'; }
+  function close() { lb.classList.remove('open'); document.body.style.overflow=''; }
+  imgs.forEach((img,i) => img.parentElement.addEventListener('click', () => open(i)));
+  document.getElementById('lightboxClose').addEventListener('click', close);
+  document.getElementById('lightboxPrev').addEventListener('click', () => { idx=(idx-1+imgs.length)%imgs.length; lbi.src=imgs[idx].src; });
+  document.getElementById('lightboxNext').addEventListener('click', () => { idx=(idx+1)%imgs.length; lbi.src=imgs[idx].src; });
+  lb.addEventListener('click', e => { if(e.target===lb) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key==='Escape') close();
+    if (e.key==='ArrowLeft')  { idx=(idx-1+imgs.length)%imgs.length; lbi.src=imgs[idx].src; }
+    if (e.key==='ArrowRight') { idx=(idx+1)%imgs.length; lbi.src=imgs[idx].src; }
+  });
+})();
+
+// ── APPOINTMENT FORM ───────────────────────────────────────
+function bookAppointment() {
+  const name  = document.getElementById('patientName').value.trim();
+  const phone = document.getElementById('patientPhone').value.trim();
+  const email = document.getElementById('patientEmail').value.trim();
+  const date  = document.getElementById('preferredDate').value;
+  const time  = document.getElementById('preferredTime').value;
+  const treat = document.getElementById('treatmentType').value;
+  const msg   = document.getElementById('message').value.trim();
+  if (!name)  { alert('Please enter your name.'); return; }
+  if (!phone) { alert('Please enter your phone number.'); return; }
+  if (!date)  { alert('Please select a preferred date.'); return; }
+  if (!time)  { alert('Please select a preferred time.'); return; }
+  if (!treat) { alert('Please select a treatment.'); return; }
+  const fd = new Date(date).toLocaleDateString('en-IN',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  const text = `🦷 *New Appointment Request*\n━━━━━━━━━━━━━━━━━━━━\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}${email?'\n📧 *Email:* '+email:''}\n📅 *Date:* ${fd}\n⏰ *Time:* ${time}\n🏥 *Treatment:* ${treat}${msg?'\n💬 *Message:* '+msg:''}\n━━━━━━━━━━━━━━━━━━━━\n_Sri Balaji Dental & Implant Centre_`;
+  window.open('https://wa.me/919912339995?text=' + encodeURIComponent(text), '_blank');
+}
+
+// ── STATS COUNTER ──────────────────────────────────────────
+const sobs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      document.querySelectorAll('.stat-number').forEach(el => {
+        const target = parseFloat(el.textContent);
+        const suffix = el.textContent.replace(/[\d.]/g,'');
+        if (isNaN(target)) return;
+        let n = 0; const inc = target / (1800/16);
+        const t = setInterval(() => {
+          n += inc; if (n >= target) { n = target; clearInterval(t); }
+          el.textContent = (target%1!==0 ? n.toFixed(1) : Math.floor(n)) + suffix;
+        }, 16);
+      });
+      sobs.disconnect();
+    }
+  });
+}, {threshold: 0.5});
+const sb = document.querySelector('.stats-bar');
+if (sb) sobs.observe(sb);
+
+// ── MIN DATE ───────────────────────────────────────────────
+const di = document.getElementById('preferredDate');
+if (di) di.min = new Date().toISOString().split('T')[0];
+</script>
+</body>
+</html>
